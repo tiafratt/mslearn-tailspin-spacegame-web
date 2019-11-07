@@ -38,6 +38,8 @@ steps:
     command: 'restore'
     projects: '**/*.csproj'
 
+on: succeeded()
+=======
 - template: templates/build.yml
   parameters:
     buildConfiguration: 'Debug'
@@ -49,3 +51,4 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeeded()
+
